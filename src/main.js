@@ -4,6 +4,7 @@ import FloatLabel from 'primevue/floatlabel';
 import AutoComplete from 'primevue/autocomplete';
 import RadioButton from 'primevue/radiobutton';
 import InputNumber from 'primevue/inputnumber';
+import DatePicker from 'primevue/datepicker';
 import PrimeVue from 'primevue/config';
 
 import { createApp } from 'vue';
@@ -26,13 +27,10 @@ app.use(PrimeVue, {
  
 
 app.component('RadioButton', RadioButton);
-
+app.component('DatePicker', DatePicker);
 app.component('FloatLabel', FloatLabel);
-
 app.component('InputText', InputText);
-
 app.component('AutoComplete', AutoComplete);
-
 app.component('InputNumber', InputNumber);
 
  
