@@ -4,6 +4,7 @@ import TextLabel from './text-label.component.vue'
 import largeTextLabelComponent from './large-text-label.component.vue'
 import DropdownTutorial from './dropdown-tutorial.component.vue'
 import radioButtonComponent from './radio-button.component.vue'
+import numberLabelComponent from './number-label.component.vue'
 
 
 const Title = ref('Title')
@@ -31,7 +32,7 @@ const Description = ref('Description')
         <radioButtonComponent text="Advanced" groupName = "group3"/>
     </div>
     <div>
-        
+        <numberLabelComponent text="Duration"/>
     </div>
  
   </main>

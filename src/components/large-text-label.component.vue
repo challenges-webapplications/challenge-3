@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import InputText from 'primevue/inputtext'
+import IftaLabel from 'primevue/iftalabel'
 
 
 const props = defineProps({
@@ -16,8 +17,9 @@ const value = ref('')
 <template>
   <div>
     <IftaLabel>
-      <InputText v-model="value" type="text" size="large"  />
       <label for="shared-text-label">{{ text }}</label>
+      <InputText v-model="value" type="text" size="large"  />
     </IftaLabel>
   </div>
+  <br>
 </template>

@@ -1,26 +1,40 @@
-import './assets/main.css'
+import './assets/main.css';
 import InputText from 'primevue/inputtext';
-import FloatLabel from 'primevue';
-import IftaLabel from 'primevue'
-
-
-import PrimeVue from 'primevue/config'
-import { createApp } from 'vue'
-import App from './App.vue'
-import Aura from '@primeuix/themes/aura';
-import AutoComplete from 'primevue';
-import RadioButton from 'primevue';
+import FloatLabel from 'primevue/floatlabel';
+import AutoComplete from 'primevue/autocomplete';
+import RadioButton from 'primevue/radiobutton';
 import InputNumber from 'primevue/inputnumber';
-const app = createApp(App)
+import PrimeVue from 'primevue/config';
+
+import { createApp } from 'vue';
+
+import App from './App.vue';
+import Aura from '@primeuix/themes/aura';
+
+
+const app = createApp(App);
 app.use(PrimeVue, {
+
     theme: {
+
         preset: Aura
+
     }
+
 });
+
+ 
+
 app.component('RadioButton', RadioButton);
-app.component('IftaLabel', IftaLabel);
+
 app.component('FloatLabel', FloatLabel);
+
 app.component('InputText', InputText);
+
 app.component('AutoComplete', AutoComplete);
+
 app.component('InputNumber', InputNumber);
-app.mount('#app')
+
+ 
+
+app.mount('#app');

@@ -1,6 +1,6 @@
 <script setup>
 import { ref } from 'vue'
-import { InputNumber } from 'primevue/inputnumber'
+import InputNumber from 'primevue/inputnumber'
 
 
 const defaultvalue = ref(5);
@@ -13,8 +13,10 @@ const props = defineProps({
 </script>
 
 <template>
+  <br>
   <div class="p-field">
-    <InputNumber id="shared-number-label" v-model="defaultvalue" input-id="integreonly" />
     <label for="shared-number-label">{{ text }}</label>
+    <br>
+    <InputNumber id="shared-number-label" v-model="defaultvalue" input-id="integreonly" />
   </div>
 </template>
