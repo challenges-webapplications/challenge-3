@@ -10,10 +10,80 @@ import checkBoxComponent from './check-box.component.vue'
 import ratingComponent from './rating.component.vue'
 import buttonComponent from './button.component.vue'
 
-
+// Form state
 const Title = ref('Title')
-const Instructor = ref('Instructor')
 const Description = ref('Description')
+const Instructor = ref('Instructor')
+const category = ref(null)
+const difficulty = ref('Beginner')
+const duration = ref(5)
+const startDate = ref(null)
+const isPublished = ref(false)
+const rating = ref(0)
+
+// Form validation
+const formErrors = ref({})
+
+const validateForm = () => {
+    const errors = {}
+    
+    if (!Title.value || Title.value === 'Title' || Title.value.length < 5) {
+        errors.title = 'Title must be at least 5 characters long'
+    }
+    
+    if (!Description.value || Description.value === 'Description') {
+        errors.description = 'Description is required'
+    }
+    
+    if (!Instructor.value || Instructor.value === 'Instructor') {
+        errors.instructor = 'Instructor name is required'
+    }
+    
+    if (!category.value) {
+        errors.category = 'Category is required'
+    }
+    
+    if (!startDate.value) {
+        errors.startDate = 'Start date is required'
+    }
+    
+    formErrors.value = errors
+    return Object.keys(errors).length === 0
+}
+
+const handleSave = () => {
+    if (validateForm()) {
+        // Save the current values
+        const formData = {
+            title: Title.value,
+            description: Description.value,
+            instructor: Instructor.value,
+            category: category.value,
+            difficulty: difficulty.value,
+            duration: duration.value,
+            startDate: startDate.value,
+            isPublished: isPublished.value,
+            rating: rating.value
+        }
+        
+        console.log('Saving form data:', formData)
+        // Here you would typically make an API call to save the data
+    }
+}
+
+const handleCancel = () => {
+    // Reset all form values to initial state
+    Title.value = 'Title'
+    Description.value = 'Description'
+    Instructor.value = 'Instructor'
+    category.value = null
+    difficulty.value = 'Beginner'
+    duration.value = 5
+    startDate.value = null
+    isPublished.value = false
+    rating.value = 0
+    formErrors.value = {}
+}
 </script>
 
 <template>
@@ -25,41 +95,46 @@ const Description = ref('Description')
             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
           </svg>
         </div>
-        <h2>TUTORIAL FORM</h2>
+        <h2>Tutorial Form</h2>
       </div>
       
       <div class="form-content">
         <div class="form-field">   
-          <TextLabel :text="Title" />
+          <TextLabel :text="Title" :minLength="5" />
+          <small class="error-message" v-if="formErrors.title">{{ formErrors.title }}</small>
         </div>
         <div class="form-field">
-          <TextLabel :text="Description" />
+          <TextLabel :text="Description" :maxLength="500" />
+          <small class="error-message" v-if="formErrors.description">{{ formErrors.description }}</small>
         </div>
         <div class="form-field">
           <largeTextLabelComponent :text="Instructor" />
+          <small class="error-message" v-if="formErrors.instructor">{{ formErrors.instructor }}</small>
         </div>
         <div class="form-field">
-          <DropdownTutorial />
+          <DropdownTutorial v-model="category" />
+          <small class="error-message" v-if="formErrors.category">{{ formErrors.category }}</small>
         </div>
         <div class="form-field radio-group">
-          <radioButtonComponent text="Begginer" groupName="group1" />
-          <radioButtonComponent text="Intermediate" groupName="group2"/>
-          <radioButtonComponent text="Advanced" groupName="group3"/>
+          <radioButtonComponent v-model="difficulty" text="Beginner" value="Beginner" groupName="difficulty" />
+          <radioButtonComponent v-model="difficulty" text="Intermediate" value="Intermediate" groupName="difficulty"/>
+          <radioButtonComponent v-model="difficulty" text="Advanced" value="Advanced" groupName="difficulty"/>
         </div>
         <div class="form-field">
-          <numberLabelComponent text="Duration"/>
+          <numberLabelComponent v-model="duration" text="Duration"/>
         </div>
         <div class="form-field">
-          <dateTutorialComponent text="Start Date"/>
+          <dateTutorialComponent v-model="startDate" text="Start Date"/>
+          <small class="error-message" v-if="formErrors.startDate">{{ formErrors.startDate }}</small>
         </div>
         <div class="form-field">
-          <checkBoxComponent text="Publish"/>
+          <checkBoxComponent v-model="isPublished" text="Publish"/>
         </div>
         <div class="form-field">
-          <ratingComponent/>
+          <ratingComponent v-model="rating"/>
         </div>
         <div class="form-field">
-          <buttonComponent/>
+          <buttonComponent @save="handleSave" @cancel="handleCancel"/>
         </div>
       </div>
       
@@ -198,5 +273,12 @@ button:hover {
 /* For checkbox and radio button styling */
 input[type="checkbox"], input[type="radio"] {
   accent-color: #3949ab;
+}
+
+.error-message {
+    color: #ef4444;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    display: block;
 }
 </style>
