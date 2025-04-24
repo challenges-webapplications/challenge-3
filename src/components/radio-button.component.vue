@@ -10,16 +10,13 @@ const props = defineProps({
   }
 })
 
-const difficultylevel = ref('')
-watch(() => props.groupName, () => {
-  difficultylevel.value = ''
-})
+
 </script>
 
 <template>
     <div class="flex items-center gap-2">
         <RadioButton 
-            v-model="difficultylevel" 
+            v-model="selected"
             inputId="difficulty" 
             name="tutorial"
             value="selected" 

@@ -6,6 +6,7 @@ import DropdownTutorial from './dropdown-tutorial.component.vue'
 import radioButtonComponent from './radio-button.component.vue'
 import numberLabelComponent from './number-label.component.vue'
 import dateTutorialComponent from './date-tutorial.component.vue'
+import checkBoxComponent from './check-box.component.vue'
 
 const Title = ref('Title')
 const Instructor = ref('Instructor')
@@ -36,6 +37,9 @@ const Description = ref('Description')
     </div>
     <div>
         <dateTutorialComponent text="Start Date"/>
+    </div>
+    <div>
+        <checkBoxComponent text="Publish"/>
     </div>
  
   </main>

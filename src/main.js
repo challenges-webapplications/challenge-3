@@ -5,6 +5,7 @@ import AutoComplete from 'primevue/autocomplete';
 import RadioButton from 'primevue/radiobutton';
 import InputNumber from 'primevue/inputnumber';
 import DatePicker from 'primevue/datepicker';
+import Checkbox from 'primevue/checkbox';
 import PrimeVue from 'primevue/config';
 
 import { createApp } from 'vue';
@@ -25,7 +26,7 @@ app.use(PrimeVue, {
 });
 
  
-
+app.component('Checkbox', Checkbox);
 app.component('RadioButton', RadioButton);
 app.component('DatePicker', DatePicker);
 app.component('FloatLabel', FloatLabel);

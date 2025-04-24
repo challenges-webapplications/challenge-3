@@ -16,7 +16,10 @@ const search = (event) => {
 
 <template>
     <div class="card flex justify-center">
+        <label for="Tutorial"> Select Tutorial </label>
+        <br>
         <AutoComplete v-model="value" dropdown :suggestions="items" @complete="search" />
+        
     </div>
     <br>
 </template>
