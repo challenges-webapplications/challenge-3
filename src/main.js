@@ -8,6 +8,10 @@ import DatePicker from 'primevue/datepicker';
 import Checkbox from 'primevue/checkbox';
 import PrimeVue from 'primevue/config';
 
+import Button from 'primevue/button';
+
+import Rating from 'primevue/rating';
+
 import { createApp } from 'vue';
 
 import App from './App.vue';
@@ -25,7 +29,8 @@ app.use(PrimeVue, {
 
 });
 
- 
+app.component('Button', Button);
+ app.component('Rating', Rating);
 app.component('Checkbox', Checkbox);
 app.component('RadioButton', RadioButton);
 app.component('DatePicker', DatePicker);
