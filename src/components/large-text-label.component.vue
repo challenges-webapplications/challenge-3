@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import InputText from 'primevue/inputtext'
-import IftaLabel from 'primevue/iftalabel'
+import FloatLabel from 'primevue/floatlabel'
 
 
 const props = defineProps({
@@ -16,10 +16,10 @@ const value = ref('')
 
 <template>
   <div>
-    <IftaLabel>
+    <FloatLabel>
       <label for="shared-text-label">{{ text }}</label>
       <InputText v-model="value" type="text" size="large"  />
-    </IftaLabel>
+    </FloatLabel>
   </div>
   <br>
 </template>

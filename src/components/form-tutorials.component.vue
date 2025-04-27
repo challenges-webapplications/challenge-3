@@ -9,8 +9,8 @@ import dateTutorialComponent from './date-tutorial.component.vue'
 import checkBoxComponent from './check-box.component.vue'
 import ratingComponent from './rating.component.vue'
 import buttonComponent from './button.component.vue'
+import LanguageSwitcher from './language-switcher.component.vue'
 
-// Form state
 const Title = ref('Title')
 const Description = ref('Description')
 const Instructor = ref('Instructor')
@@ -21,7 +21,6 @@ const startDate = ref(null)
 const isPublished = ref(false)
 const rating = ref(0)
 
-// Form validation
 const formErrors = ref({})
 
 const validateForm = () => {
@@ -53,7 +52,7 @@ const validateForm = () => {
 
 const handleSave = () => {
     if (validateForm()) {
-        // Save the current values
+
         const formData = {
             title: Title.value,
             description: Description.value,
@@ -67,12 +66,10 @@ const handleSave = () => {
         }
         
         console.log('Saving form data:', formData)
-        // Here you would typically make an API call to save the data
     }
 }
 
 const handleCancel = () => {
-    // Reset all form values to initial state
     Title.value = 'Title'
     Description.value = 'Description'
     Instructor.value = 'Instructor'
@@ -87,8 +84,12 @@ const handleCancel = () => {
 </script>
 
 <template>
+
   <div class="form-container">
     <div class="form-card">
+      <div class="language-switcher">
+        <LanguageSwitcher />
+      </div>
       <div class="form-header">
         <div class="avatar-circle">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -170,6 +171,7 @@ body {
   min-height: 100vh;
   width: 100%;
   padding: 20px;
+  position: relative;
 }
 
 .form-card {
@@ -281,4 +283,13 @@ input[type="checkbox"], input[type="radio"] {
     margin-top: 0.25rem;
     display: block;
 }
+
+.language-switcher {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1;
+}
+
+
 </style>

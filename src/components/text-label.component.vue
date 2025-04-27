@@ -1,7 +1,8 @@
 <script setup>
 import { ref, watch } from 'vue'
 import InputText from 'primevue/inputtext'
-import { IftaLabel } from 'primevue'
+// Fix the import
+import FloatLabel from 'primevue/floatlabel'
 
 const props = defineProps({
   text: {
@@ -38,7 +39,7 @@ watch(value, (newValue) => {
 
 <template>
   <div class="input-container">
-    <IftaLabel>
+    <FloatLabel>
       <InputText 
         id="shared-text-label" 
         v-model="value" 
@@ -47,7 +48,7 @@ watch(value, (newValue) => {
         :maxlength="text === 'Description' ? 500 : undefined"
       />
       <label for="shared-text-label">{{ text }}</label>
-    </IftaLabel>
+    </FloatLabel>
     <small class="error-message" v-if="!isValid">{{ errorMessage }}</small>
   </div>
   <br>

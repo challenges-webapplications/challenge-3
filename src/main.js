@@ -11,9 +11,9 @@ import PrimeVue from 'primevue/config';
 import Button from 'primevue/button';
 
 import Rating from 'primevue/rating';
-
+import  SelectButton  from 'primevue/selectbutton';
 import { createApp } from 'vue';
-
+import i18n from './i18n.js';
 import App from './App.vue';
 import Aura from '@primeuix/themes/aura';
 
@@ -29,8 +29,11 @@ app.use(PrimeVue, {
 
 });
 
+
+app.use(i18n)
+app.component('SelectButton', SelectButton);
 app.component('Button', Button);
- app.component('Rating', Rating);
+app.component('Rating', Rating);
 app.component('Checkbox', Checkbox);
 app.component('RadioButton', RadioButton);
 app.component('DatePicker', DatePicker);
