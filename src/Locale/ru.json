@@ -1,5 +1,20 @@
 {
     "message": {
-        "hello": "privet"
+        "title": "Зарегистрируйте учебники для Учебного центра",
+        "title2": "Учебная форма",
+        "notaccount": "У вас еще нет аккаунта?"
+    },
+    "form": {
+        "title": "Имя",
+        "description": "Описание",
+        "instructor": "Инструктор",
+        "selectTutorial": "Выбрать учебник",
+        "begginer": "Новичок",
+        "intermediate": "Средний",
+        "advanced": "Продвинутый",
+        "duration": "Продолжительность",
+        "published": "Опубликовано",
+        "save": "Сохранить",
+        "cancel": "Отмена"
     }
 }

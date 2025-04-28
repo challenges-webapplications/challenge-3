@@ -1,5 +1,20 @@
 {
     "message": {
-        "hello": "Hello world"
+        "title": "Register tutorials for Learning center",
+        "title2": "Tutorial Form",
+        "notaccount": "Dont have an account yet?"
+    },
+    "form": {
+        "title": "Title",
+        "description": "Description",
+        "instructor": "Instructor",
+        "selectTutorial": "Select Tutorial",
+        "begginer": "Begginer",
+        "intermediate": "Intermediate",
+        "advanced": "Advanced",
+        "duration": "Duration",
+        "published": "Published",
+        "save": "Save",
+        "cancel": "Cancel"
     }
 }

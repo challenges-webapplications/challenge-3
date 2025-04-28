@@ -95,7 +95,7 @@ const handleCancel = () => {
             <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
           </svg>
         </div>
-        <h2>Tutorial Form</h2>
+        <h2>{{ $t('message.title2') }}</h2>
       </div>
       
       <div class="form-content">
@@ -104,7 +104,7 @@ const handleCancel = () => {
           <small class="error-message" v-if="formErrors.title">{{ formErrors.title }}</small>
         </div>
         <div class="form-field">
-          <TextLabel :text="Description" :maxLength="500" />
+          <TextLabel text=" $t('form.title') " :maxLength="500" />
           <small class="error-message" v-if="formErrors.description">{{ formErrors.description }}</small>
         </div>
         <div class="form-field">
@@ -139,8 +139,8 @@ const handleCancel = () => {
       </div>
       
       <div class="form-footer">
-        <p>FORM TUTORIAL</p>
-        <p class="small-text">DON'T HAVE AN ACCOUNT YET?</p>
+        <p>{{ $t('message.title2') }}</p>
+        <p class="small-text">{{ $t('message.notaccount') }}</p>
       </div>
     </div>
   </div>

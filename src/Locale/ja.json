@@ -1,5 +1,20 @@
 {
     "message": {
-        "hello": "Konichiwa"
+        "title": "ラーニングセンターにチュートリアルを登録",
+        "title2": "チュートリアルフォーム",
+        "notaccount": "アカウントをお持ちでないですか？"
+    },
+    "form": {
+        "title": "名前",
+        "description": "説明",
+        "instructor": "講師",
+        "selectTutorial": "チュートリアルを選択",
+        "begginer": "初級",
+        "intermediate": "中級",
+        "advanced": "上級",
+        "duration": "所要時間",
+        "published": "公開済み",
+        "save": "保存",
+        "cancel": "キャンセル"
     }
 }

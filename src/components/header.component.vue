@@ -1,12 +1,11 @@
 <script setup>
-// Import the language switcher component
 import LanguageSwitcher from './language-switcher.component.vue'
 </script>
 
 <template>
   <header class="app-header">
     <div class="header-content">
-      <h1 class="app-title">Register Tutorials for Learning center</h1>
+      <h1 class="app-title">{{ $t('message.title') }}</h1>
       <div class="language-switcher-container">
         <LanguageSwitcher />
       </div>
