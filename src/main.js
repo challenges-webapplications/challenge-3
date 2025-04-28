@@ -7,9 +7,9 @@ import InputNumber from 'primevue/inputnumber';
 import DatePicker from 'primevue/datepicker';
 import Checkbox from 'primevue/checkbox';
 import PrimeVue from 'primevue/config';
-
+import i18n from './i18n';
 import Button from 'primevue/button';
-
+import SelectButton  from 'primevue/selectbutton';
 import Rating from 'primevue/rating';
 
 import { createApp } from 'vue';
@@ -28,7 +28,8 @@ app.use(PrimeVue, {
     }
 
 });
-
+app.use(i18n);
+app.component('select-button', SelectButton);
 app.component('Button', Button);
  app.component('Rating', Rating);
 app.component('Checkbox', Checkbox);
